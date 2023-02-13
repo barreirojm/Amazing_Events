@@ -40,6 +40,13 @@ main {
   background-color: #f8f7ff;
 }
 
+.eventos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 25px;
+}
+
 .contenedor_card {
   display: flex;
   flex-direction: column;
@@ -67,6 +74,8 @@ main {
   align-items: center;
 }
 
-/* .index-nav {
-  align-items: center;
-} */
+footer {
+  background-color: #b8b8ff;
+  text-align: center;
+  padding: 25px 10px;
+}
