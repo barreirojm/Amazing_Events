@@ -1,7 +1,45 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap);
+
 * {
-  background-color: #b8b8ff;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+header {
+  background-color: #9381ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
 }
 
 .logo {
   width: 200px;
+  padding: 5px;
 }
+
+.subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #b8b8ff;
+}
+
+.cat-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+}
+
+main {
+  background-color: #f8f7ff;
+}
+
+/* .index-nav {
+  align-items: center;
+} */
