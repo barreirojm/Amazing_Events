@@ -44,10 +44,12 @@ a {
 
 main {
   background-color: #f8f7ff;
+  /* width: 100%; */
 }
 
 .eventos {
-  padding: 40px;
+  padding: 40px 100px 20px 100px;
+  justify-content: space-evenly;
 }
 
 .card {
@@ -175,3 +177,8 @@ th p {
 /* .footer-stats {
   padding-top: 400px;
 } */
+
+.main-detail {
+  min-height: 100vh;
+  display: flex;
+}
