@@ -69,6 +69,11 @@ main {
   object-fit: cover;
 }
 
+.img-fit-detail {
+  height: 300px;
+  object-fit: contain;
+}
+
 /* .contenedor_card {
   display: flex;
   flex-direction: column;
