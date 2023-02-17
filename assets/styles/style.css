@@ -23,6 +23,10 @@ header {
   padding: 5px;
 }
 
+.btn-hamburg {
+  margin-right: 25px !important;
+}
+
 a {
   text-decoration: none;
   padding: 0 8px;
@@ -69,9 +73,13 @@ main {
   object-fit: cover;
 }
 
+.container-img-detail{
+  height: 25rem;
+}
+
 .img-fit-detail {
   height: 300px;
-  object-fit: contain;
+  object-fit:cover;
 }
 
 /* .contenedor_card {
@@ -185,5 +193,11 @@ th p {
 
 .main-detail {
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
+}
+
+.subheader-detail {
+  text-align: center;
+  padding: 5px;
+  background-color: #b8b8ff;
 }
