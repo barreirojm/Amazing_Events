@@ -9,7 +9,7 @@ let eventCartas = [];
 function createEvents() {
     
     for (let event of eventos){
-        if (event.date > "2022-01-01"){
+        if (event.date > data.currentDate){
             let cartaEv = `<div class="card mt-4" style="width: 30rem;" >
         <img src="${event.image}" class="card-img-top img-fit" alt="cinema">
         <div class="card-body">
