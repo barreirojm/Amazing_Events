@@ -9,7 +9,8 @@ let eventCartas = [];
 function createEvents() {
     
     for (let event of eventos){
-        let cartaEv = `<div class="card mt-4" style="width: 30rem;" >
+        if (event.estimate > 1){
+            let cartaEv = `<div class="card mt-4" style="width: 30rem;" >
         <img src="${event.image}" class="card-img-top img-fit" alt="cinema">
         <div class="card-body">
             <h5 class="card-title">${event.name}</h5>
@@ -18,7 +19,8 @@ function createEvents() {
             <a href="./details.html" class="btn btn-primary">More info</a>
         </div>
     </div>`
-    eventCartas.push (cartaEv)
+    eventCartas.push (cartaEv)}
+        
     }
 
     
