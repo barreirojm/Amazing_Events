@@ -46,6 +46,11 @@ a {
   padding: 10px 10px 10px 10px;
 }
 
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 main {
   background-color: #f8f7ff;
   /* width: 100%; */
