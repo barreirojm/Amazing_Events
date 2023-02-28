@@ -57,7 +57,7 @@ main {
 }
 
 .eventos {
-  padding: 40px 100px 20px 100px;
+  padding-bottom: 50px;
   justify-content: space-evenly;
 }
 
@@ -78,13 +78,13 @@ main {
   object-fit: cover;
 }
 
-.container-img-detail{
+.container-img-detail {
   height: 25rem;
 }
 
 .img-fit-detail {
   height: 300px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 /* .contenedor_card {
