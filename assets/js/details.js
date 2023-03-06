@@ -1,14 +1,14 @@
-const queryString = location.search;
+let queryString = location.search;
 
-const params = new URLSearchParams(queryString);
+let params = new URLSearchParams(queryString);
 
-const id = params.get("id");
+let id = params.get("id");
 
-const cardEvento = data.events.find((event) => event._id == id);
+let cardEvento = data.events.find((event) => event._id == id);
 
 console.log(cardEvento);
 
-const card = document.getElementById("card-detail");
+let card = document.getElementById("card-detail");
 
 card.innerHTML = `
         <div class="container-card d-flex justify-content-center">

@@ -39,16 +39,50 @@ a {
   background-color: #b8b8ff;
 }
 
-.cat-search {
+/* .cat-search {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   padding: 10px 10px 10px 10px;
 }
 
-.categories {
+#fieldset {
+  flex-direction: row;
+} */
+
+/* fieldset,
+select {
+  width: 360px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px 4px;
+} */
+
+.contact-label {
+  margin-left: 10px;
+}
+
+.checkboxes {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  width: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 685px) {
+  #checkboxes {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 }
 
 main {
