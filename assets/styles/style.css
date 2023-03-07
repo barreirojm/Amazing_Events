@@ -90,9 +90,21 @@ main {
   /* width: 100%; */
 }
 
+body {
+  min-height: 100vh;
+}
+
+.padreEventos {
+  min-height: 100vh;
+  /* display: flex;
+  justify-content: center; */
+}
+
 .eventos {
   padding-bottom: 50px;
   justify-content: space-evenly;
+  /* flex-grow: 1; */
+  
 }
 
 .card {
@@ -120,33 +132,6 @@ main {
   height: 300px;
   object-fit: cover;
 }
-
-/* .contenedor_card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-  border-style: solid black;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
-  padding: 20px;
-  width: 500px;
-}
-
-.img-card {
-  height: 300px;
-}
-
-.img-card img {
-  object-fit: fill;
-  width: 100%;
-}
-
-.pie-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .main-contact {
   padding-bottom: 350px;
@@ -187,6 +172,10 @@ footer {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  /* position:absolute;
+  bottom:0;
+  width:100%;
+  margin-top: -200px; */
 }
 
 .cohort p {
