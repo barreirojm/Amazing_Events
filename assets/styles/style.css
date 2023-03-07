@@ -65,14 +65,14 @@ select {
 }
 
 .checkboxes {
-  width: 50%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .searchbar {
-  width: 50%;
+  width: 70%;
   margin-right: 10px;
   margin-top: 10px;
 }
@@ -109,7 +109,7 @@ main {
 
 .img-fit {
   height: 300px;
-  object-fit: cover;
+  object-fit:cover;
 }
 
 .container-img-detail {
@@ -240,3 +240,8 @@ th p {
   padding: 5px;
   background-color: #b8b8ff;
 }
+
+#notFoundStyle {
+  min-height: 100vh;
+}
+
