@@ -20,7 +20,7 @@ function printChecks(_id, array_categorias) {
   array_categorias.push(
     `<div class=searchbar><input onkeyup="captureData()" id="id_search" class="contact-input" type="text" name="texto" placeholder="search"></div>`
   );
-  console.log(array_categorias);
+
   container.innerHTML = array_categorias.join("");
 }
 
