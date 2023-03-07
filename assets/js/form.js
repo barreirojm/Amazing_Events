@@ -15,7 +15,14 @@ function captureData() {
 const handleForm = (event) => {
     event.preventDefault()
     captureData()
+    /* alert("Hi there, thanks for reaching out. We've received your message and will get back to you as soon as possible.") */
+    Swal.fire(
+        'Hi there! Thanks for reaching out.',
+        'We have received your message and will get back to you as soon as possible.',
+        'success'
+      )
 }
 
 let buttonForm = document.getElementById('form-button')
 buttonForm.addEventListener('click', handleForm)
+
