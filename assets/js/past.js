@@ -1,37 +1,27 @@
-console.log(data);
+console.log(data)
 
-const eventos = data.events;
+let eventos = data.events
 
-console.log(eventos);
+console.log(eventos)
 
-let eventCartas = [];
-
-function createEvents() {
-    
-    for (let event of eventos){
-        if (event.date < data.currentDate){
-            let cartaEv = `<div class="card mt-4" style="width: 30rem;" >
-        <img src="${event.image}" class="card-img-top img-fit" alt="cinema">
-        <div class="card-body">
-            <h5 class="card-title">${event.name}</h5>
-            <p class="card-text">${event.description}</p>
-            <p>Price: $ ${event.price}</p>
-            <a href="./details.html" class="btn btn-primary">More info</a>
-        </div>
-    </div>`
-    eventCartas.push (cartaEv)}
-        
-    }
-
-    
+function defineTemplate(event) {
+  if (event.date < data.currentDate) {return `<div class="card mt-4" style="width: 30rem;" >
+    <img src="${event.image}" class="card-img-top img-fit">
+    <div class="card-body">
+        <h5 class="card-title">${event.name}</h5>
+        <p class="card-text">${event.description}</p>
+        <p>Price: $ ${event.price}</p>
+        <a href="./details.html?id=${event._id}" class="btn btn-primary">More info</a>
+    </div>
+</div>`}
 }
 
-console.log(eventCartas);
+console.log(defineTemplate);
 
-function printEvents(){
-    let cartaEv = document.getElementById('cardEvents');
-    cartaEv.innerHTML = eventCartas.join('')
+function printTemplates(id_etiqueta,array_eventos) {
+    let container = document.querySelector(id_etiqueta)
+    array_eventos = array_eventos.map(defineTemplate)
+    container.innerHTML = array_eventos.join('')
 }
 
-createEvents();
-printEvents();
+printTemplates('#cardEvents', eventos)

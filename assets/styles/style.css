@@ -20,7 +20,7 @@ header {
 
 .logo {
   width: 200px;
-  padding: 5px;
+  padding: 15px;
 }
 
 .btn-hamburg {
@@ -39,16 +39,50 @@ a {
   background-color: #b8b8ff;
 }
 
-.cat-search {
+/* .cat-search {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   padding: 10px 10px 10px 10px;
 }
 
-.categories {
+#fieldset {
+  flex-direction: row;
+} */
+
+/* fieldset,
+select {
+  width: 360px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px 4px;
+} */
+
+.contact-label {
+  margin-left: 10px;
+}
+
+.checkboxes {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  width: 70%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 685px) {
+  #checkboxes {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 }
 
 main {
@@ -56,9 +90,21 @@ main {
   /* width: 100%; */
 }
 
+body {
+  min-height: 100vh;
+}
+
+.padreEventos {
+  min-height: 100vh;
+  /* display: flex;
+  justify-content: center; */
+}
+
 .eventos {
   padding-bottom: 50px;
   justify-content: space-evenly;
+  /* flex-grow: 1; */
+  
 }
 
 .card {
@@ -75,7 +121,7 @@ main {
 
 .img-fit {
   height: 300px;
-  object-fit: cover;
+  object-fit:cover;
 }
 
 .container-img-detail {
@@ -86,33 +132,6 @@ main {
   height: 300px;
   object-fit: cover;
 }
-
-/* .contenedor_card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-  border-style: solid black;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
-  padding: 20px;
-  width: 500px;
-}
-
-.img-card {
-  height: 300px;
-}
-
-.img-card img {
-  object-fit: fill;
-  width: 100%;
-}
-
-.pie-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .main-contact {
   padding-bottom: 350px;
@@ -153,6 +172,10 @@ footer {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  /* position:absolute;
+  bottom:0;
+  width:100%;
+  margin-top: -200px; */
 }
 
 .cohort p {
@@ -206,3 +229,8 @@ th p {
   padding: 5px;
   background-color: #b8b8ff;
 }
+
+#notFoundStyle {
+  min-height: 100vh;
+}
+
