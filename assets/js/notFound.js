@@ -12,7 +12,7 @@ function notFound(id_etiqueta) {
                                 <div class="card-body">
                                     <h4 class="card-title">Event not found!</h4>
                                     <h5 class="card-text">We are sorry, try again!</h5>
-                                    <button onclick="history.back()" class="btn btn-primary">Go Back</button>                                 
+                                    <button onclick="window.location.reload();" class="btn btn-primary">Try again!</button>                                 
                                 </div>
                             </div>
                         </div>
