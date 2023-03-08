@@ -30,8 +30,19 @@ header {
 
 a {
   text-decoration: none;
+  font-weight: bolder;
   padding: 0 8px;
 }
+
+.btn-info {
+  background-color:#b8b8ff !important;
+  border-color: #9381ff !important;
+}
+
+.collapse {
+  padding: 0 25px;
+}
+
 .subheader {
   display: flex;
   align-items: center;
