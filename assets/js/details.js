@@ -25,7 +25,7 @@ card.innerHTML = `
                                         <p class="card-text">Date: ${cardEvento.date}</p>
                                         <p class="card-text">Price: $${cardEvento.price}</p>                                        
                                         <p class="card-text">Capacity: ${cardEvento.capacity}</p>
-                                        <a href="./index.html" class="btn btn-primary">Go back</a> 
+                                        <button onclick="history.back()" class="btn btn-primary">Go Back</button>
                                         
                                     </div>
                                 </div>
