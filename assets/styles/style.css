@@ -87,7 +87,7 @@ a {
     align-items:center;        
   }
 
-  input {
+  .class_checks {
     width: 20px;
     right: 25px;
     vertical-align: middle;
