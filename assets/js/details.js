@@ -22,8 +22,10 @@ card.innerHTML = `
                                         <h5 class="card-title">${cardEvento.name}</h5>
                                         <p class="card-text">${cardEvento.description}</p>
                                         <p class="card-text">Place: ${cardEvento.place}</p>
-                                        <p class="card-text">Price: $${cardEvento.price}</p>
                                         <p class="card-text">Date: ${cardEvento.date}</p>
+                                        <p class="card-text">Price: $${cardEvento.price}</p>                                        
+                                        <p class="card-text">Capacity: ${cardEvento.capacity}</p>
+                                        <a href="./index.html" class="btn btn-primary">Go back</a> 
                                         
                                     </div>
                                 </div>

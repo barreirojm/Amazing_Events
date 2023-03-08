@@ -11,7 +11,8 @@ function notFound(id_etiqueta) {
                             <div class="col-md-6">
                                 <div class="card-body">
                                     <h4 class="card-title">Event not found!</h4>
-                                    <h5 class="card-text">We are sorry, try again!</h5>                                    
+                                    <h5 class="card-text">We are sorry, try again!</h5>
+                                    <a href="./index.html" class="btn btn-primary">Go back</a>                                 
                                 </div>
                             </div>
                         </div>
