@@ -42,7 +42,7 @@ const handleForm = (event) => {
 }
 
 let buttonForm = document.getElementById('form-button')
-buttonForm.addEventListener('click', handleForm)
+buttonForm.addEventListener('submit', handleForm)
 
 
 
