@@ -11,7 +11,7 @@ function defineTemplate(event) {
         <h5 class="card-title">${event.name}</h5>
         <p class="card-text">${event.description}</p>
         <p>Price: $ ${event.price}</p>
-        <a href="./details.html?id=${event._id}" class="btn btn-primary">More info</a>
+        <a href="./details.html?id=${event.id}" class="btn btn-primary">More info</a>
     </div>
 </div>`
 }
@@ -26,7 +26,7 @@ function printTemplates(id_etiqueta,array_eventos) {
 
 /* printTemplates('#cardEvents', eventos) */
 
-async function fetchApi() {
+async function fetchApiHome() {
     try {
         let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
         let fetchResponse = await fetch(urlApi)
@@ -43,4 +43,4 @@ async function fetchApi() {
     
 }
 
-fetchApi()
+fetchApiHome()
