@@ -29,9 +29,9 @@ async function fetchApiCategorias() {
     try {
         let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
         let fetchResponse = await fetch(urlApi)
-        console.log(fetchResponse);
+        
         let response = await fetchResponse.json()
-        console.log(response);  
+         
         /* printTemplates('#cardEvents', response.events) */
 
         let categorias = []
@@ -46,14 +46,14 @@ async function fetchApiCategorias() {
         array_categorias = array_categorias.map(each=> {
             return `
                 <fieldset class="checkboxes">
-                    <input onclick="captureData()" class="class_checks contact-input" type="checkbox" value="${each}" name="tipo" id="${each}">
+                    <input onclick="fetchApiFilter()" class="class_checks contact-input" type="checkbox" value="${each}" name="tipo" id="${each}">
                     <label class="contact-label" for="${each}">${each}</label> 
                 </fieldset>
                 `
             })
         array_categorias.push(`
             <div class=searchbar>
-                <input onkeyup="captureData()" id="id_search" class="contact-input" type="text" name="texto" placeholder="search">
+                <input onkeyup="fetchApiFilter()" id="id_search" class="contact-input" type="text" name="texto" placeholder="search">
             </div>
         `)
         container.innerHTML = array_categorias.join('')

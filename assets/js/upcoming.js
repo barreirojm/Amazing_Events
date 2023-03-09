@@ -1,5 +1,5 @@
-console.log(data)
-
+/* console.log(data)
+ */
 /* let eventos = data.events
 
 console.log(eventos) */
@@ -46,8 +46,7 @@ async function fetchApi() {
           </div>`}
           }
           
-          console.log(defineTemplate);
-          
+                    
           function printTemplates(id_etiqueta,array_eventos) {
               let container = document.querySelector(id_etiqueta)
               array_eventos = array_eventos.map(defineTemplate)

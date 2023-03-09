@@ -1,4 +1,4 @@
-console.log(data)
+/* console.log(data) */
 
 /* let eventos = data.events */
 
@@ -16,7 +16,7 @@ function defineTemplate(event) {
 </div>`
 }
 
-console.log(defineTemplate);
+/* console.log(defineTemplate); */
 
 function printTemplates(id_etiqueta,array_eventos) {
     let container = document.querySelector(id_etiqueta)
@@ -30,7 +30,7 @@ async function fetchApi() {
     try {
         let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
         let fetchResponse = await fetch(urlApi)
-        console.log(fetchResponse);
+        /* console.log(fetchResponse); */
         let response = await fetchResponse.json()
         console.log(response);  
         printTemplates('#cardEvents', response.events)
