@@ -24,4 +24,23 @@ function printTemplates(id_etiqueta,array_eventos) {
     container.innerHTML = array_eventos.join('')
 }
 
-printTemplates('#cardEvents', eventos)
+/* printTemplates('#cardEvents', eventos) */
+
+async function fetchApi() {
+    try {
+        let urlApi = 'https://mh-h0bh.onrender.com/api/amazing'
+        let fetchResponse = await fetch(urlApi)
+        console.log(fetchResponse);
+        let response = await fetchResponse.json()
+        console.log(response);  
+        printTemplates('#cardEvents', response.response)
+      
+    }
+    catch(error) {
+        console.log('ocurrió un error');
+        console.log(error);
+    }
+    
+}
+
+fetchApi()
