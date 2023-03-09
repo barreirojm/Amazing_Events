@@ -1,8 +1,8 @@
 console.log(data)
 
-let eventos = data.events
+/* let eventos = data.events */
 
-console.log(eventos)
+/* console.log(eventos) */
 
 function defineTemplate(event) {
     return `<div class="card mt-4" style="width: 30rem;" >
@@ -28,12 +28,12 @@ function printTemplates(id_etiqueta,array_eventos) {
 
 async function fetchApi() {
     try {
-        let urlApi = 'https://mh-h0bh.onrender.com/api/amazing'
+        let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
         let fetchResponse = await fetch(urlApi)
         console.log(fetchResponse);
         let response = await fetchResponse.json()
         console.log(response);  
-        printTemplates('#cardEvents', response.response)
+        printTemplates('#cardEvents', response.events)
       
     }
     catch(error) {
