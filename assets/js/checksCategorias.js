@@ -27,7 +27,7 @@ printChecks('#checkboxes',categorias) */
 
 async function fetchApiCategorias() {
     try {
-        let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
+        let urlApi = 'https://mh.up.railway.app/api/amazing-events'
         let fetchResponse = await fetch(urlApi)
         
         let response = await fetchResponse.json()

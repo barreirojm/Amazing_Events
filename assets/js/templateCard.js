@@ -28,11 +28,12 @@ function printTemplates(id_etiqueta,array_eventos) {
 
 async function fetchApiHome() {
     try {
-        let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
+        let urlApi = 'https://mh.up.railway.app/api/amazing-events'
         let fetchResponse = await fetch(urlApi)
         /* console.log(fetchResponse); */
         let response = await fetchResponse.json()
         console.log(response);  
+        
         printTemplates('#cardEvents', response.events)
       
     }

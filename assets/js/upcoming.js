@@ -28,14 +28,14 @@ function printTemplates(id_etiqueta,array_eventos) {
 
 async function fetchApiUpcoming() {
     try {
-        let urlApi = 'https://mh-h0bh.onrender.com/api/amazing-events'
+        let urlApi = 'https://mh.up.railway.app/api/amazing-events?time=past'
         let fetchResponse = await fetch(urlApi)
         console.log(fetchResponse);
         let response = await fetchResponse.json()
         console.log(response);
         
         function defineTemplate(event) {
-            if (event.date > response.currentDate) {return `<div class="card mt-4" style="width: 30rem;" >
+            if (event.date < response.currentDate) {return `<div class="card mt-4" style="width: 30rem;" >
               <img src="${event.image}" class="card-img-top img-fit">
               <div class="card-body">
                   <h5 class="card-title">${event.name}</h5>
@@ -46,7 +46,8 @@ async function fetchApiUpcoming() {
           </div>`}
           }
           
-                    
+          console.log(defineTemplate);
+          
           function printTemplates(id_etiqueta,array_eventos) {
               let container = document.querySelector(id_etiqueta)
               array_eventos = array_eventos.map(defineTemplate)
@@ -64,5 +65,6 @@ async function fetchApiUpcoming() {
     }
     
 }
+
 
 fetchApiUpcoming()
