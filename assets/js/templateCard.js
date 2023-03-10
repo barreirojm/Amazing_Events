@@ -10,28 +10,8 @@ function defineTemplate(event) {
 </div>`
 }
 
-function printTemplates(id_etiqueta,array_eventos) {
+function printTemplates(id_etiqueta, array_eventos) {
     let container = document.querySelector(id_etiqueta)
     array_eventos = array_eventos.map(defineTemplate)
     container.innerHTML = array_eventos.join('')
 }
-
-async function fetchApiHome() {
-    try {
-        let urlApi = 'https://mh.up.railway.app/api/amazing-events'
-        let fetchResponse = await fetch(urlApi)
-        /* console.log(fetchResponse); */
-        let response = await fetchResponse.json()
-        console.log(response);  
-        
-        printTemplates('#cardEvents', response.events)
-      
-    }
-    catch(error) {
-        console.log('ocurrió un error');
-        console.log(error);
-    }
-    
-}
-
-fetchApiHome()

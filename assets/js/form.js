@@ -11,23 +11,14 @@ function captureData() {
         [message.name]: message.value
     }
     console.log(dataForm);
-    
 
     alert(`Hi there ${dataForm.name} , thanks for reaching out.\nWe've received your message and will get back to you as soon as possible at your email: ${dataForm.email}\nAmazing Events.-`);
-        
-    
-    
-}
 
+}
 
 const handleForm = (event) => {
     event.preventDefault()
     captureData()
-    
-
-
-
-           
 }
 
 let buttonForm = document.getElementById('form-button')
