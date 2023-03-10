@@ -1,6 +1,6 @@
 async function fetchApiFilter() {
     try {
-          let urlApi = 'https://mh.up.railway.app/api/amazing-events?time=upcoming'
+          let urlApi = 'https://mh.up.railway.app/api/amazing-events?time=past'
           let fetchResponse = await fetch(urlApi)
           
           let response = await fetchResponse.json()
@@ -19,13 +19,13 @@ async function fetchApiFilter() {
           });
   
           console.log(filtro);
-        
+
           if (filtro.length > 0) {
             printTemplates("#cardEvents", filtro);
           } else {
             notFound("#cardEvents");
           }
-          }
+          }    
     catch(error) {
       console.log('ocurrió un error');
       console.log(error);
