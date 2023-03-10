@@ -30,7 +30,8 @@ async function fetchApiDetails() {
                                                     <h5 class="card-title">${cardEvento.name}</h5>
                                                     <p class="card-text">${cardEvento.description}</p>
                                                     <p class="card-text">Place: ${cardEvento.place}</p>
-                                                    <p class="card-text">Date: ${cardEvento.date}</p>
+                                                    <p class="card-text">Date: ${(new Date(cardEvento.date)).getDate()+1}/${(new Date(cardEvento.date)).getMonth()+1}/${(new Date(cardEvento.date)).getFullYear()}
+                                                    </p>
                                                     <p class="card-text">Price: $${cardEvento.price}</p>                                        
                                                     <p class="card-text">Capacity: ${cardEvento.capacity}</p>
                                                     <button onclick="history.back()" class="btn btn-primary">Go Back</button>
