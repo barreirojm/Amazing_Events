@@ -51,14 +51,6 @@ a {
   background-color: #b8b8ff;
 }
 
-/* .cat-search {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px 10px 10px 10px;
-} */
-
 /* fieldset {
   flex-direction: row;
   align-items: center;
@@ -201,7 +193,7 @@ table {
   empty-cells: show;
   border: 1px solid;
   border-collapse: collapse;
-  /* vertical-align: middle; */
+  vertical-align: middle;
 }
 
 th,
@@ -229,6 +221,7 @@ th p {
   display: flex;
   justify-content: center;
 }
+
 
 /* .footer-stats {
   padding-top: 400px;
