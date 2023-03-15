@@ -5,21 +5,55 @@ async function tablaUno() {
         let fetchResponse = await fetch(urlApi)
         let response = await fetchResponse.json()
         let eventos = response.events
-        /* console.log(eventos); */
+        let eventos2 = response.events
+        
+        eventos = eventos.sort((evento1, evento2) => evento2.assistance - evento1.assistance)              
+            
+        document.getElementById("tablaUno").innerHTML = `
+              
+                <colgroup span="3" class="columns"></colgroup>
+                <tr>
+                    <th colspan="3">
+                        <p>Events statistics</p>
+                    </th>
 
-        //
-        eventos = eventos.sort((evento1, evento2) => evento2.assistance - evento1.assistance)
-        console.log(eventos);
-        console.log(eventos[0].name); 
-        console.log(eventos[0].assistance);
-        console.log(eventos[eventos.length-1].name); 
-        console.log(eventos[eventos.length-1].assistance);
-        //
-        eventos = eventos.sort((evento1, evento2) => evento2.capacity - evento1.capacity)
-        console.log(eventos[0].name);
-        console.log(eventos[0].capacity);
-
-
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        <p>Events with the highest percentage of attendance</p>
+                    </td>
+                    <td>
+                        <p>Events with the lowest percentage of attendance</p>
+                    </td>
+                    <td>
+                        <p>Event with larger capacity</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>${eventos[0].name}</p>
+                    </td>
+                    <td>
+                        <p>${eventos[eventos.length-1].name}</p>
+                    </td>
+                    <td>
+                        <p>${eventos2[0].name}</p>
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        <p>${eventos[0].assistance}</p>
+                    </td>
+                    <td>
+                        <p>${eventos[eventos.length-1].assistance}</p>
+                    </td>
+                    <td>
+                        <p>${eventos2[0].capacity}</p>
+                    </td>
+                </tr>      
+            
+    `;
+        
     }
 
     catch (error) {
@@ -40,9 +74,7 @@ async function tablaDos() {
 
         for (let evento of eventos) {
             evento.revenue = evento.price * evento.estimate
-        }
-
-        console.log(eventos);
+        }        
 
         let categorias = []
         eventos.forEach(each => {
@@ -51,11 +83,9 @@ async function tablaDos() {
             }
         })
 
-        categorias.sort()
+        categorias.sort()        
 
-        console.log(categorias);
-
-        let arrayTabla = []
+        let arrayTablaDos = []
 
         for (let category of categorias) {
             let capacityTotal = 0;
@@ -64,25 +94,48 @@ async function tablaDos() {
 
             categoriasporEventos = eventos.filter (evento => evento.category === category)
 
-            /* console.log(categoriasporEventos); */
-
             categoriasporEventos.forEach (evento => {
                 capacityTotal += evento.capacity;
                 assistanceTotal += evento.estimate;
                 revenue += evento.revenue;
             })
 
-            console.log(category + " => Revenue:" + revenue + ", Estimate assistance:" + assistanceTotal + ", Capacity:" + capacityTotal);
-
             let assistancePercentage = (assistanceTotal / capacityTotal) * 100;
-            assistancePercentage = Math.trunc(assistancePercentage) + '%';
-                
-            console.log(assistancePercentage);
+            assistancePercentage = Math.trunc(assistancePercentage) + '%';            
+
+            let filaTabla = `
+                    <tr>
+                        <td><p>${category}</p></td>
+                        <td><p>$${revenue}</p></td>
+                        <td><p>${assistancePercentage}</p></td>
+                    </tr>
+            `;
+
+            arrayTablaDos.push(filaTabla);
         }
 
-    }
-        
-    
+        document.getElementById("tablaDos").innerHTML +=  `
+
+            <colgroup span="3" class="columns"></colgroup>
+                <tr>
+                    <th colspan="3">
+                        <p>Upcoming events statistics by category</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        <p>Categories</p>
+                    </td>
+                    <td>
+                        <p>Revenues</p>
+                    </td>
+                    <td>
+                        <p>Percentage of attendance</p>
+                    </td>
+                </tr>
+        ` 
+        + arrayTablaDos.join("")
+    }    
 
     catch (error) {
         console.log('ocurrió un error');
@@ -102,9 +155,7 @@ async function tablaTres() {
 
         for (let evento of eventos) {
             evento.revenue = evento.price * evento.assistance
-        }
-
-        console.log(eventos);
+        }        
 
         let categorias = []
         eventos.forEach(each => {
@@ -115,9 +166,7 @@ async function tablaTres() {
 
         categorias.sort()
 
-        console.log(categorias);
-
-        let arrayTabla = []
+        let arrayTablaTres = []
 
         for (let category of categorias) {
             let capacityTotal = 0;
@@ -126,23 +175,47 @@ async function tablaTres() {
 
             categoriasporEventos = eventos.filter (evento => evento.category === category)
 
-            /* console.log(categoriasporEventos); */
-
             categoriasporEventos.forEach (evento => {
                 capacityTotal += evento.capacity;
                 assistanceTotal += evento.assistance;
                 revenue += evento.revenue;
             })
 
-            console.log(category + " => Revenue:" + revenue + ", Estimate assistance:" + assistanceTotal + ", Capacity:" + capacityTotal);
-
             let assistancePercentage = (assistanceTotal / capacityTotal) * 100;
             assistancePercentage = Math.trunc(assistancePercentage) + '%';
-                
-            console.log(assistancePercentage);
+
+            let filaTabla = `
+                    <tr>
+                        <td><p>${category}</p></td>
+                        <td><p>$${revenue}</p></td>
+                        <td><p>${assistancePercentage}</p></td>
+                    </tr>
+            `;
+
+            arrayTablaTres.push(filaTabla);
         }
-        
-        
+
+        document.getElementById("tablaTres").innerHTML +=  `
+
+            <colgroup span="3" class="columns"></colgroup>
+                <tr>
+                    <th colspan="3">
+                        <p>Past events statistic by category</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td rowspan="1">
+                        <p>Categories</p>
+                    </td>
+                    <td>
+                        <p>Revenues</p>
+                    </td>
+                    <td>
+                        <p>Percentage of attendance</p>
+                    </td>
+                </tr>
+        ` 
+        + arrayTablaTres.join("")
     }
 
     catch (error) {

@@ -194,6 +194,7 @@ table {
   border: 1px solid;
   border-collapse: collapse;
   vertical-align: middle;
+  margin: 0
 }
 
 th,
@@ -202,7 +203,7 @@ td {
   border-collapse: collapse;
   padding: 2px 2px 2px 2px;
   vertical-align: middle;
-  text-align: left;
+  text-align: middle;
   padding: 2px 2px 2px 2px;
 }
 
@@ -215,11 +216,16 @@ th p {
   /* vertical-align: bottom; */
 }
 
+td p {
+  font-size: 18px;
+  vertical-align:middle;
+}
+
 .planilla {
   padding-bottom: 400px;
   padding-top: 30px;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 
