@@ -194,7 +194,10 @@ table {
   border: 1px solid;
   border-collapse: collapse;
   vertical-align: middle;
-  margin: 0
+  margin: 0;
+  table-layout:auto;
+  width: 100%;
+    
 }
 
 th,
