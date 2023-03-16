@@ -57,14 +57,14 @@
         </div>
 
         <div class="contact-container">
-            <form action="#">
+            <form>
                 <input type="text" placeholder="Your Name" name="name" id="name_form" required>
                 <br>
                 <input type="email" placeholder="Your Email" name="email" id="email_form" required>
                 <br>
                 <textarea rows="5" placeholder="Your Message" name="message" id="msg_form" required></textarea>
                 <br>
-                <input id="form-button" type="submit" value="Submit">
+                <input onclick="captureData()" id="form-button" type="submit" value="Submit">
             </form>
         </div>
 
@@ -92,7 +92,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="./assets/js/form.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 

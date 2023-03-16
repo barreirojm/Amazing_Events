@@ -127,10 +127,10 @@ async function tablaDos() {
                         <p class="textos-planilla">Categories</p>
                     </td>
                     <td>
-                        <p class="textos-planilla">Revenues</p>
+                        <p class="textos-planilla">Revenues (estimated)</p>
                     </td>
                     <td>
-                        <p class="textos-planilla">Percentage of attendance</p>
+                        <p class="textos-planilla">Percentage of attendance (estimated)</p>
                     </td>
                 </tr>
         ` 
