@@ -14,19 +14,19 @@ async function tablaUno() {
                 <colgroup span="3" class="columns"></colgroup>
                 <tr>
                     <th colspan="3">
-                        <p>Events statistics</p>
+                        <p class="textos-planilla">Events statistics</p>
                     </th>
 
                 </tr>
                 <tr>
                     <td rowspan="1">
-                        <p>Events with the highest percentage of attendance</p>
+                        <p class="textos-planilla">Events with the highest percentage of attendance</p>
                     </td>
                     <td>
-                        <p>Events with the lowest percentage of attendance</p>
+                        <p class="textos-planilla">Events with the lowest percentage of attendance</p>
                     </td>
                     <td>
-                        <p>Event with larger capacity</p>
+                        <p class="textos-planilla">Event with larger capacity</p>
                     </td>
                 </tr>
                 <tr>
@@ -119,18 +119,18 @@ async function tablaDos() {
             <colgroup span="3" class="columns"></colgroup>
                 <tr>
                     <th colspan="3">
-                        <p>Upcoming events statistics by category</p>
+                        <p class="textos-planilla">Upcoming events statistics by category</p>
                     </th>
                 </tr>
                 <tr>
                     <td rowspan="1">
-                        <p>Categories</p>
+                        <p class="textos-planilla">Categories</p>
                     </td>
                     <td>
-                        <p>Revenues</p>
+                        <p class="textos-planilla">Revenues</p>
                     </td>
                     <td>
-                        <p>Percentage of attendance</p>
+                        <p class="textos-planilla">Percentage of attendance</p>
                     </td>
                 </tr>
         ` 
@@ -200,18 +200,18 @@ async function tablaTres() {
             <colgroup span="3" class="columns"></colgroup>
                 <tr>
                     <th colspan="3">
-                        <p>Past events statistic by category</p>
+                        <p class="textos-planilla">Past events statistic by category</p>
                     </th>
                 </tr>
                 <tr>
                     <td rowspan="1">
-                        <p>Categories</p>
+                        <p class="textos-planilla">Categories</p>
                     </td>
                     <td>
-                        <p>Revenues</p>
+                        <p class="textos-planilla">Revenues</p>
                     </td>
                     <td>
-                        <p>Percentage of attendance</p>
+                        <p class="textos-planilla">Percentage of attendance</p>
                     </td>
                 </tr>
         ` 
