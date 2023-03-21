@@ -15,3 +15,15 @@ function captureData() {
 
 }
 
+const handleForm = (event) => {
+    event.preventDefault()
+    capturarData()
+    
+}
+
+let buttonForm = document.getElementById('form-button')
+
+buttonForm.addEventListener(
+    'submit',
+    handleForm
+)
