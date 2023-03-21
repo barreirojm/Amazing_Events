@@ -1,22 +1,17 @@
 async function tablaUno() {
-
     try {
         let urlApi = 'https://mh.up.railway.app/api/amazing-events?time=past'
         let fetchResponse = await fetch(urlApi)
         let response = await fetchResponse.json()
         let eventos = response.events
-        let eventos2 = response.events
-        
-        eventos = eventos.sort((evento1, evento2) => evento2.assistance - evento1.assistance)              
-            
-        document.getElementById("tablaUno").innerHTML = `
-              
+        let eventos2 = response.events        
+        eventos = eventos.sort((evento1, evento2) => evento2.assistance - evento1.assistance)
+        document.getElementById("tablaUno").innerHTML = `              
                 <colgroup span="3" class="columns"></colgroup>
                 <tr>
                     <th colspan="3">
                         <p class="textos-planilla">Events statistics</p>
                     </th>
-
                 </tr>
                 <tr>
                     <td rowspan="1">
@@ -50,72 +45,51 @@ async function tablaUno() {
                     <td>
                         <p>${eventos2[0].capacity}</p>
                     </td>
-                </tr>      
-            
-    `;
-        
+                </tr>
+    `;        
     }
-
     catch (error) {
         console.log('ocurrió un error');
         console.log(error);
     }
 }
-
 tablaUno();
 
 async function tablaDos() {
-
     try {
         let urlApi = 'https://mh.up.railway.app/api/amazing-events?time=upcoming'
         let fetchResponse = await fetch(urlApi)
         let response = await fetchResponse.json()
         let eventos = response.events
-
-        for (let evento of eventos) {
-            evento.revenue = evento.price * evento.estimate
-        }        
-
-        let categorias = []
-        eventos.forEach(each => {
-            if (!categorias.includes(each.category)) {
-                categorias.push(each.category)
-            }
-        })
-
-        categorias.sort()        
-
+        eventos.forEach( evento => { evento.revenue = evento.price * evento.estimate})
+        let categorias = [... new Set((response.events).map(each => each.category))].sort()
         let arrayTablaDos = []
-
-        for (let category of categorias) {
-            let capacityTotal = 0;
-            let assistanceTotal = 0;
-            let revenue = 0;
-
+        categorias.forEach( category => {
             categoriasporEventos = eventos.filter (evento => evento.category === category)
-
-            categoriasporEventos.forEach (evento => {
-                capacityTotal += evento.capacity;
-                assistanceTotal += evento.estimate;
-                revenue += evento.revenue;
-            })
-
+            let categoryRevenue = categoriasporEventos.map(each => each.revenue)            
+            let revenueTotal = categoryRevenue.reduce((prev, number) => {
+                return prev + number;
+            }, 0);
+            let categoryCapacity = categoriasporEventos.map(each => each.capacity)            
+            let capacityTotal = categoryCapacity.reduce((prev, number) => {
+                return prev + number;
+            }, 0);
+            let categoryAssistance = categoriasporEventos.map(each => each.estimate)            
+            let assistanceTotal = categoryAssistance.reduce((prev, number) => {
+                return prev + number;
+            }, 0);
             let assistancePercentage = (assistanceTotal / capacityTotal) * 100;
-            assistancePercentage = Math.trunc(assistancePercentage) + '%';            
-
+            assistancePercentage = Math.trunc(assistancePercentage) + '%';
             let filaTabla = `
                     <tr>
                         <td><p>${category}</p></td>
-                        <td><p>$${revenue}</p></td>
+                        <td><p>$${revenueTotal}</p></td>
                         <td><p>${assistancePercentage}</p></td>
                     </tr>
             `;
-
             arrayTablaDos.push(filaTabla);
-        }
-
+        })
         document.getElementById("tablaDos").innerHTML +=  `
-
             <colgroup span="3" class="columns"></colgroup>
                 <tr>
                     <th colspan="3">
@@ -135,66 +109,48 @@ async function tablaDos() {
                 </tr>
         ` 
         + arrayTablaDos.join("")
-    }    
-
+    }
     catch (error) {
         console.log('ocurrió un error');
         console.log(error);
     }
 }
-
 tablaDos();
 
 async function tablaTres() {
-
     try {
         let urlApi = 'https://mh.up.railway.app/api/amazing-events?time=past'
         let fetchResponse = await fetch(urlApi)
         let response = await fetchResponse.json()
         let eventos = response.events
-
-        for (let evento of eventos) {
-            evento.revenue = evento.price * evento.assistance
-        }        
-
-        let categorias = []
-        eventos.forEach(each => {
-            if (!categorias.includes(each.category)) {
-                categorias.push(each.category)
-            }
-        })
-
-        categorias.sort()
-
+        eventos.forEach( evento => { evento.revenue = evento.price * evento.assistance})
+        let categorias = [... new Set((response.events).map(each => each.category))].sort()
         let arrayTablaTres = []
-
-        for (let category of categorias) {
-            let capacityTotal = 0;
-            let assistanceTotal = 0;
-            let revenue = 0;
-
+        categorias.forEach( category => {
             categoriasporEventos = eventos.filter (evento => evento.category === category)
-
-            categoriasporEventos.forEach (evento => {
-                capacityTotal += evento.capacity;
-                assistanceTotal += evento.assistance;
-                revenue += evento.revenue;
-            })
-
+            let categoryRevenue = categoriasporEventos.map(each => each.revenue)
+            let revenueTotal = categoryRevenue.reduce((prev, number) => {
+                return prev + number;
+            }, 0);
+            let categoryCapacity = categoriasporEventos.map(each => each.capacity)            
+            let capacityTotal = categoryCapacity.reduce((prev, number) => {
+                return prev + number;
+            }, 0);
+            let categoryAssistance = categoriasporEventos.map(each => each.assistance)            
+            let assistanceTotal = categoryAssistance.reduce((prev, number) => {
+                return prev + number;
+            }, 0);
             let assistancePercentage = (assistanceTotal / capacityTotal) * 100;
             assistancePercentage = Math.trunc(assistancePercentage) + '%';
-
             let filaTabla = `
                     <tr>
                         <td><p>${category}</p></td>
-                        <td><p>$${revenue}</p></td>
+                        <td><p>$${revenueTotal}</p></td>
                         <td><p>${assistancePercentage}</p></td>
                     </tr>
             `;
-
             arrayTablaTres.push(filaTabla);
-        }
-
+        })
         document.getElementById("tablaTres").innerHTML +=  `
 
             <colgroup span="3" class="columns"></colgroup>
@@ -217,7 +173,6 @@ async function tablaTres() {
         ` 
         + arrayTablaTres.join("")
     }
-
     catch (error) {
         console.log('ocurrió un error');
         console.log(error);
