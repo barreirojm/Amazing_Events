@@ -9,9 +9,17 @@ function captureData() {
         [message.name]: message.value
     }
     
-    console.log(dataForm);
+    //console.log(dataForm);
 
-    alert(`Hi there ${dataForm.name} , thanks for reaching out.\nWe've received your message and will get back to you as soon as possible at your email: ${dataForm.email}\nAmazing Events.-`);  
+    //alert(`Hi there ${dataForm.name} , thanks for reaching out.\nWe've received your message and will get back to you as soon as possible at your email: ${dataForm.email}\nAmazing Events.-`);
+
+    if (!Object.values(dataForm).some(valor => valor === '')) {
+        console.log(dataForm)
+        };
+       
+        if (!Object.values(dataForm).some(valor => valor === '')) {
+            alert(`Hi there ${dataForm.name} , thanks for reaching out.\nWe've received your message and will get back to you as soon as possible at your email: ${dataForm.email}\nAmazing Events.-`);
+        } 
 
 }
 
